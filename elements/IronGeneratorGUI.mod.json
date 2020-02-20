@@ -1,0 +1,41 @@
+{
+  "_fv": 5,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 352,
+    "height": 332,
+    "renderBgLayer": true,
+    "containerBlock": "IronGenerator",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Level: <TextFieldName:level>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Level: <TextFieldName:level>",
+          "x": 264,
+          "y": 78
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Upgrade",
+          "onClick": {
+            "name": "IronGeneratorUpgrade"
+          },
+          "width": 140,
+          "height": 40,
+          "name": "Upgrade",
+          "x": 354,
+          "y": 132
+        }
+      }
+    ],
+    "inventories": []
+  }
+}

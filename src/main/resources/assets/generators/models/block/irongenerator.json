@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "generators:blocks/8-iron",
+    "up": "generators:blocks/8-iron",
+    "north": "generators:blocks/8-iron",
+    "east": "generators:blocks/8-iron",
+    "south": "generators:blocks/8-iron",
+    "west": "generators:blocks/8-iron",
+    "particle": "generators:blocks/8-iron"
+  }
+}
