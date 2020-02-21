@@ -74,58 +74,6 @@
         }
       },
       {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": "Items.IRON_INGOT"
-          },
-          "inventory": "inherited",
-          "id": 5,
-          "name": "Slot #5",
-          "x": 444,
-          "y": 186
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": "Items.IRON_INGOT"
-          },
-          "inventory": "inherited",
-          "id": 6,
-          "name": "Slot #6",
-          "x": 480,
-          "y": 186
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": "Items.IRON_INGOT"
-          },
-          "inventory": "inherited",
-          "id": 7,
-          "name": "Slot #7",
-          "x": 516,
-          "y": 186
-        }
-      },
-      {
-        "type": "inputslot",
-        "data": {
-          "inputLimit": {
-            "value": "Items.IRON_INGOT"
-          },
-          "inventory": "inherited",
-          "id": 8,
-          "name": "Slot #8",
-          "x": 552,
-          "y": 186
-        }
-      },
-      {
         "type": "button",
         "data": {
           "text": "Upgrade",
@@ -136,7 +84,7 @@
           "height": 40,
           "name": "Upgrade",
           "x": 446,
-          "y": 132
+          "y": 114
         }
       },
       {
@@ -198,6 +146,17 @@
           "name": "Next:Rate to 4s",
           "x": 264,
           "y": 158
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": " Break ",
+          "width": 140,
+          "height": 40,
+          "name": " Break ",
+          "x": 446,
+          "y": 156
         }
       }
     ],

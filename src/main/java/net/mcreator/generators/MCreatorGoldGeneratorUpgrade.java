@@ -570,11 +570,6 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 2)) {
 			if (((amount) == 16)) {
 				{
-					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 1);
-				}
-				{
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
@@ -618,6 +613,11 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 3);
 				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
@@ -952,7 +952,7 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 				{
 					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 1);
+						tileEntity.getTileData().putDouble("level", 3);
 				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
@@ -977,11 +977,6 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 3)) {
 			if (((amount) == 32)) {
-				{
-					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 4);
-				}
 				{
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
@@ -1026,6 +1021,11 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 4);
 				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
@@ -1386,11 +1386,6 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 4)) {
 			if (((amount) == 64)) {
 				{
-					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 5);
-				}
-				{
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
@@ -1434,6 +1429,11 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 5);
 				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
@@ -1787,11 +1787,6 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 		} else {
 			if (((amount) == 128)) {
 				{
-					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 6);
-				}
-				{
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
@@ -1835,6 +1830,11 @@ public class MCreatorGoldGeneratorUpgrade extends Elementsgenerators.ModElement 
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 6);
 				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {

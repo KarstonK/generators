@@ -119,30 +119,6 @@ public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
-			this.addSlot(new Slot(inherited, 5, 98, 57) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
-				}
-			});
-			this.addSlot(new Slot(inherited, 6, 116, 57) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
-				}
-			});
-			this.addSlot(new Slot(inherited, 7, 134, 57) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
-				}
-			});
-			this.addSlot(new Slot(inherited, 8, 152, 57) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
-				}
-			});
 			int si;
 			int sj;
 			for (si = 0; si < 3; ++si)
@@ -164,18 +140,18 @@ public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 9) {
-					if (!this.mergeItemStack(itemstack1, 9, this.inventorySlots.size(), true)) {
+				if (index < 5) {
+					if (!this.mergeItemStack(itemstack1, 5, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 9, false)) {
-					if (index < 9 + 27) {
-						if (!this.mergeItemStack(itemstack1, 9 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 5, false)) {
+					if (index < 5 + 27) {
+						if (!this.mergeItemStack(itemstack1, 5 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 9, 9 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 5, 5 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -345,9 +321,13 @@ public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 98, this.guiTop + 29, 70, 20, "Upgrade", e -> {
+			this.addButton(new Button(this.guiLeft + 98, this.guiTop + 20, 70, 20, "Upgrade", e -> {
 				generators.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 98, this.guiTop + 41, 70, 20, " Break ", e -> {
+				generators.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
+				handleButtonAction(entity, 1, x, y, z);
 			}));
 		}
 	}

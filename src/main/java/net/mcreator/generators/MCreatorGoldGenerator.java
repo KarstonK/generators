@@ -7,6 +7,7 @@ import net.minecraftforge.event.RegistryEvent;
 
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.World;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -34,6 +35,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
@@ -63,8 +65,13 @@ public class MCreatorGoldGenerator extends Elementsgenerators.ModElement {
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).lightValue(0));
+			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(10f, 10f).lightValue(0));
 			setRegistryName("goldgenerator");
+		}
+
+		@Override
+		public int tickRate(IWorldReader world) {
+			return 20;
 		}
 
 		@Override
@@ -82,6 +89,7 @@ public class MCreatorGoldGenerator extends Elementsgenerators.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			Block block = this;
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 			{
 				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 				$_dependencies.put("x", x);
@@ -90,6 +98,24 @@ public class MCreatorGoldGenerator extends Elementsgenerators.ModElement {
 				$_dependencies.put("world", world);
 				MCreatorGeneratorStart.executeProcedure($_dependencies);
 			}
+		}
+
+		@Override
+		public void tick(BlockState state, World world, BlockPos pos, Random random) {
+			super.tick(state, world, pos, random);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			Block block = this;
+			{
+				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				MCreatorGoldGeneratorSpawn.executeProcedure($_dependencies);
+			}
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
 
 		@Override

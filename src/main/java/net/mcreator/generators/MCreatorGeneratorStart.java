@@ -31,10 +31,24 @@ public class MCreatorGeneratorStart extends Elementsgenerators.ModElement {
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		{
-			TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-			if (tileEntity != null)
-				tileEntity.getTileData().putDouble("level", 1);
+		if ((!((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) >= 0.1))) {
+			{
+				TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				if (tileEntity != null)
+					tileEntity.getTileData().putDouble("level", 1);
+			}
+			{
+				TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				if (tileEntity != null)
+					tileEntity.getTileData().putDouble("times", 0);
+			}
 		}
 	}
 }
