@@ -91,6 +91,83 @@ public class MCreatorIronGeneratorProcedure extends Elementsgenerators.ModElemen
 								.writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
+		} else if (((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 3)) {
+			if (entity instanceof ServerPlayerEntity)
+				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+					@Override
+					public ITextComponent getDisplayName() {
+						return new StringTextComponent("IronGeneratorGUI3");
+					}
+
+					@Override
+					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+						return new MCreatorIronGeneratorGUI3.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+								.writeBlockPos(new BlockPos(x, y, z)));
+					}
+				}, new BlockPos(x, y, z));
+		} else if (((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 4)) {
+			if (entity instanceof ServerPlayerEntity)
+				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+					@Override
+					public ITextComponent getDisplayName() {
+						return new StringTextComponent("IronGeneratorGUI4");
+					}
+
+					@Override
+					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+						return new MCreatorIronGeneratorGUI4.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+								.writeBlockPos(new BlockPos(x, y, z)));
+					}
+				}, new BlockPos(x, y, z));
+		} else if (((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 5)) {
+			if (entity instanceof ServerPlayerEntity)
+				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+					@Override
+					public ITextComponent getDisplayName() {
+						return new StringTextComponent("IronGeneratorGUI5");
+					}
+
+					@Override
+					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+						return new MCreatorIronGeneratorGUI5.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+								.writeBlockPos(new BlockPos(x, y, z)));
+					}
+				}, new BlockPos(x, y, z));
+		} else {
+			if (entity instanceof ServerPlayerEntity)
+				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+					@Override
+					public ITextComponent getDisplayName() {
+						return new StringTextComponent("IronGeneratorGUI6");
+					}
+
+					@Override
+					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+						return new MCreatorIronGeneratorGUI6.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+								.writeBlockPos(new BlockPos(x, y, z)));
+					}
+				}, new BlockPos(x, y, z));
 		}
 	}
 }

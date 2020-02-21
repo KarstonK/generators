@@ -623,12 +623,12 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("IronGeneratorGUI1");
+							return new StringTextComponent("IronGeneratorGUI3");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new MCreatorIronGeneratorGUI1.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+							return new MCreatorIronGeneratorGUI3.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
 									.writeBlockPos(new BlockPos(x, y, z)));
 						}
 					}, new BlockPos(x, y, z));
@@ -958,12 +958,1229 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("IronGeneratorGUI1");
+							return new StringTextComponent("IronGeneratorGUI3");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new MCreatorIronGeneratorGUI1.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+							return new MCreatorIronGeneratorGUI3.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+									.writeBlockPos(new BlockPos(x, y, z)));
+						}
+					}, new BlockPos(x, y, z));
+			}
+		} else if (((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 3)) {
+			if (((amount) == 32)) {
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 4);
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (1));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (2));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (3));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (4));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (5));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (6));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (7));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				if (entity instanceof ServerPlayerEntity)
+					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("IronGeneratorGUI4");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new MCreatorIronGeneratorGUI4.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+									.writeBlockPos(new BlockPos(x, y, z)));
+						}
+					}, new BlockPos(x, y, z));
+			} else if (((amount) > 32)) {
+				from = (double) 32;
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (0), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (1), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (1));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (2), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (2));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (3))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (3), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (3))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (3));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (4))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (4), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (4))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (4));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (5))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (5), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (5))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (5));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (6))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (6), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (6))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (6));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (7))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (7), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (7))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (7));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (8))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (8), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (8))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+					}
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 4);
+				}
+				if (entity instanceof ServerPlayerEntity)
+					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("IronGeneratorGUI4");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new MCreatorIronGeneratorGUI4.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+									.writeBlockPos(new BlockPos(x, y, z)));
+						}
+					}, new BlockPos(x, y, z));
+			}
+		} else if (((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 4)) {
+			if (((amount) == 64)) {
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 5);
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (1));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (2));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (3));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (4));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (5));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (6));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (7));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				if (entity instanceof ServerPlayerEntity)
+					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("IronGeneratorGUI5");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new MCreatorIronGeneratorGUI5.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+									.writeBlockPos(new BlockPos(x, y, z)));
+						}
+					}, new BlockPos(x, y, z));
+			} else if (((amount) > 64)) {
+				from = (double) 64;
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (0), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (1), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (1));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (2), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (2));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (3))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (3), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (3))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (3));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (4))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (4), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (4))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (4));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (5))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (5), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (5))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (5));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (6))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (6), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (6))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (6));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (7))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (7), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (7))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (7));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (8))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (8), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (8))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+					}
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 5);
+				}
+				if (entity instanceof ServerPlayerEntity)
+					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("IronGeneratorGUI5");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new MCreatorIronGeneratorGUI5.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+									.writeBlockPos(new BlockPos(x, y, z)));
+						}
+					}, new BlockPos(x, y, z));
+			}
+		} else {
+			if (((amount) == 128)) {
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 6);
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (1));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (2));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (3));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (4));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (5));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (6));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (7));
+				}
+				{
+					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (inv instanceof LockableLootTileEntity)
+						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+				}
+				if (entity instanceof ServerPlayerEntity)
+					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("IronGeneratorGUI6");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new MCreatorIronGeneratorGUI6.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+									.writeBlockPos(new BlockPos(x, y, z)));
+						}
+					}, new BlockPos(x, y, z));
+			} else if (((amount) > 128)) {
+				from = (double) 128;
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (0), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (0));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (1), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (1));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (2), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (2));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (3))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (3), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (3))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (3));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (4))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (4), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (4))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (4));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (5))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (5), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (5))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (5));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (6))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (6), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (6))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (6));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (7))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (7), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (7))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (7));
+					}
+				}
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						TileEntity inv = world.getTileEntity(pos);
+						if (inv instanceof LockableLootTileEntity) {
+							ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+							if (stack != null)
+								return stack.getCount();
+						}
+						return 0;
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (8))) > (from))) {
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).decrStackSize((int) (8), (int) ((from)));
+					}
+					from = (double) 0;
+				} else {
+					from = (double) ((from) - (new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							TileEntity inv = world.getTileEntity(pos);
+							if (inv instanceof LockableLootTileEntity) {
+								ItemStack stack = ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								if (stack != null)
+									return stack.getCount();
+							}
+							return 0;
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (8))));
+					{
+						TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (inv instanceof LockableLootTileEntity)
+							((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
+					}
+				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 6);
+				}
+				if (entity instanceof ServerPlayerEntity)
+					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("IronGeneratorGUI6");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new MCreatorIronGeneratorGUI6.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
 									.writeBlockPos(new BlockPos(x, y, z)));
 						}
 					}, new BlockPos(x, y, z));

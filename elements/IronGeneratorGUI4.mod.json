@@ -1,0 +1,206 @@
+{
+  "_fv": 5,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 352,
+    "height": 332,
+    "renderBgLayer": true,
+    "containerBlock": "IronGenerator",
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 0,
+          "name": "Slot #0",
+          "x": 264,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 1,
+          "name": "Slot #1",
+          "x": 300,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 2,
+          "name": "Slot #2",
+          "x": 336,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 3,
+          "name": "Slot #3",
+          "x": 372,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 4,
+          "name": "Slot #4",
+          "x": 408,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 5,
+          "name": "Slot #5",
+          "x": 444,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 6,
+          "name": "Slot #6",
+          "x": 480,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 7,
+          "name": "Slot #7",
+          "x": 516,
+          "y": 186
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "inventory": "inherited",
+          "id": 8,
+          "name": "Slot #8",
+          "x": 552,
+          "y": 186
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Upgrade",
+          "onClick": {
+            "name": "IronGeneratorUpgrade"
+          },
+          "width": 140,
+          "height": 40,
+          "name": "Upgrade",
+          "x": 446,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Level:4         Required:64",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Level:4         Required:64",
+          "x": 264,
+          "y": 86
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ironx2.png",
+          "name": "ironx2.png",
+          "x": 538,
+          "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spawn rate: 3s",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Spawn rate: 3s",
+          "x": 264,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spawn amount:2",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Spawn amount:2",
+          "x": 264,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Next:Rate to 2s",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Next:Rate to 2s",
+          "x": 264,
+          "y": 156
+        }
+      }
+    ],
+    "inventories": []
+  }
+}
