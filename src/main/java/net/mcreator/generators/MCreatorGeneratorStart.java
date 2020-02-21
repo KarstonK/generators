@@ -5,26 +5,26 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 
 @Elementsgenerators.ModElement.Tag
-public class MCreatorIronGeneratorStart extends Elementsgenerators.ModElement {
-	public MCreatorIronGeneratorStart(Elementsgenerators instance) {
-		super(instance, 5);
+public class MCreatorGeneratorStart extends Elementsgenerators.ModElement {
+	public MCreatorGeneratorStart(Elementsgenerators instance) {
+		super(instance, 22);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure MCreatorIronGeneratorStart!");
+			System.err.println("Failed to load dependency x for procedure MCreatorGeneratorStart!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure MCreatorIronGeneratorStart!");
+			System.err.println("Failed to load dependency y for procedure MCreatorGeneratorStart!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure MCreatorIronGeneratorStart!");
+			System.err.println("Failed to load dependency z for procedure MCreatorGeneratorStart!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure MCreatorIronGeneratorStart!");
+			System.err.println("Failed to load dependency world for procedure MCreatorGeneratorStart!");
 			return;
 		}
 		int x = (int) dependencies.get("x");

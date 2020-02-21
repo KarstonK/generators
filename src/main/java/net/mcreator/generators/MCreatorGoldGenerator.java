@@ -38,14 +38,14 @@ import java.util.List;
 import java.util.Collections;
 
 @Elementsgenerators.ModElement.Tag
-public class MCreatorIronGenerator extends Elementsgenerators.ModElement {
-	@ObjectHolder("generators:irongenerator")
+public class MCreatorGoldGenerator extends Elementsgenerators.ModElement {
+	@ObjectHolder("generators:goldgenerator")
 	public static final Block block = null;
-	@ObjectHolder("generators:irongenerator")
+	@ObjectHolder("generators:goldgenerator")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
-	public MCreatorIronGenerator(Elementsgenerators instance) {
-		super(instance, 1);
+	public MCreatorGoldGenerator(Elementsgenerators instance) {
+		super(instance, 12);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -58,13 +58,13 @@ public class MCreatorIronGenerator extends Elementsgenerators.ModElement {
 
 	@SubscribeEvent
 	public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("irongenerator"));
+		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("goldgenerator"));
 	}
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).lightValue(0));
-			setRegistryName("irongenerator");
+			setRegistryName("goldgenerator");
 		}
 
 		@Override
@@ -107,7 +107,7 @@ public class MCreatorIronGenerator extends Elementsgenerators.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				MCreatorIronGeneratorProcedure.executeProcedure($_dependencies);
+				MCreatorGoldGeneratorProcedure.executeProcedure($_dependencies);
 			}
 			return true;
 		}
@@ -202,7 +202,7 @@ public class MCreatorIronGenerator extends Elementsgenerators.ModElement {
 
 		@Override
 		public ITextComponent getDefaultName() {
-			return new StringTextComponent("irongenerator");
+			return new StringTextComponent("goldgenerator");
 		}
 
 		@Override

@@ -2,12 +2,12 @@
   "_fv": 5,
   "_type": "block",
   "definition": {
-    "texture": "8-iron",
-    "textureTop": "8-iron",
-    "textureLeft": "8-iron",
-    "textureFront": "8-iron",
-    "textureRight": "8-iron",
-    "textureBack": "8-iron",
+    "texture": "9-gold",
+    "textureTop": "9-gold",
+    "textureLeft": "9-gold",
+    "textureFront": "9-gold",
+    "textureRight": "9-gold",
+    "textureBack": "9-gold",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -71,7 +71,7 @@
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
     "onRightClicked": {
-      "name": "IronGeneratorProcedure"
+      "name": "GoldGeneratorProcedure"
     },
     "onBlockAdded": {
       "name": "GeneratorStart"

@@ -34,13 +34,13 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 @Elementsgenerators.ModElement.Tag
-public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
+public class MCreatorGoldGeneratorGUI4 extends Elementsgenerators.ModElement {
 	public static HashMap guiinventory = new HashMap();
 	public static IInventory inherited;
 	private static ContainerType<GuiContainerMod> containerType = null;
 
-	public MCreatorIronGeneratorGUI6(Elementsgenerators instance) {
-		super(instance, 11);
+	public MCreatorGoldGeneratorGUI4(Elementsgenerators instance) {
+		super(instance, 16);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new, ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
 				GUISlotChangedMessage::handler);
@@ -55,7 +55,7 @@ public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
 
 	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("irongeneratorgui6"));
+		event.getRegistry().register(containerType.setRegistryName("goldgeneratorgui4"));
 	}
 
 	public static class GuiContainerModFactory implements IContainerFactory {
@@ -92,55 +92,55 @@ public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
 			this.addSlot(new Slot(inherited, 0, 8, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 1, 26, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 2, 44, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 3, 62, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 4, 80, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 5, 98, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 6, 116, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 7, 134, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			this.addSlot(new Slot(inherited, 8, 152, 57) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+					return (new ItemStack(Items.GOLD_INGOT, (int) (1)).getItem() == stack.getItem());
 				}
 			});
 			int si;
@@ -302,7 +302,7 @@ public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("generators:textures/irongeneratorgui6.png");
+		private static final ResourceLocation texture = new ResourceLocation("generators:textures/goldgeneratorgui4.png");
 
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
@@ -318,8 +318,8 @@ public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("generators:textures/ironx2.png"));
-			this.blit(this.guiLeft + 149, this.guiTop + 4, 0, 0, 256, 256);
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("generators:textures/gold_x2.png"));
+			this.blit(this.guiLeft + 144, this.guiTop + 4, 0, 0, 256, 256);
 		}
 
 		@Override
@@ -329,9 +329,10 @@ public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Level:6         Required:---", 7, 6, -10066330);
-			this.font.drawString("Spawn rate: 2s", 7, 18, -10066330);
-			this.font.drawString("Spawn amount:4", 7, 29, -10066330);
+			this.font.drawString("Level:4         Required:64", 7, 6, -10066330);
+			this.font.drawString("Spawn rate: 3s", 7, 18, -10066330);
+			this.font.drawString("Spawn amount:2", 7, 29, -10066330);
+			this.font.drawString("Next:Rate to 2s", 7, 41, -10066330);
 		}
 
 		@Override
@@ -448,7 +449,7 @@ public class MCreatorIronGeneratorGUI6 extends Elementsgenerators.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				MCreatorIronGeneratorUpgrade.executeProcedure($_dependencies);
+				MCreatorGoldGeneratorUpgrade.executeProcedure($_dependencies);
 			}
 		}
 	}

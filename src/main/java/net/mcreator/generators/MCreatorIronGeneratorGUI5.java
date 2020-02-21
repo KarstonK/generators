@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.inventory.container.ContainerType;
@@ -89,22 +90,58 @@ public class MCreatorIronGeneratorGUI5 extends Elementsgenerators.ModElement {
 			else
 				inherited = inheritedinv;
 			this.addSlot(new Slot(inherited, 0, 8, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 1, 26, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 2, 44, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 3, 62, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 4, 80, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 5, 98, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 6, 116, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 7, 134, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			this.addSlot(new Slot(inherited, 8, 152, 57) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return (new ItemStack(Items.IRON_INGOT, (int) (1)).getItem() == stack.getItem());
+				}
 			});
 			int si;
 			int sj;

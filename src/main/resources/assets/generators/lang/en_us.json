@@ -1,3 +1,4 @@
 {
-  "block.generators.irongenerator": "Iron Generator"
+  "block.generators.irongenerator": "Iron Generator",
+  "block.generators.goldgenerator": "Iron Generator"
 }
