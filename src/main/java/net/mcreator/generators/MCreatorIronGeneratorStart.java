@@ -34,7 +34,7 @@ public class MCreatorIronGeneratorStart extends Elementsgenerators.ModElement {
 		{
 			TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 			if (tileEntity != null)
-				tileEntity.getTileData().putDouble("level", 1);
+				tileEntity.getTileData().putDouble("level", 0);
 		}
 	}
 }

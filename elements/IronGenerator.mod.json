@@ -66,7 +66,7 @@
     "particleSpawningCondition": "ALWAYS",
     "hasInventory": true,
     "inventorySize": 9,
-    "inventoryStackSize": 64,
+    "inventoryStackSize": 65,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],

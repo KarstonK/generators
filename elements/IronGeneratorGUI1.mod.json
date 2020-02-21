@@ -9,20 +9,6 @@
     "containerBlock": "IronGenerator",
     "components": [
       {
-        "type": "button",
-        "data": {
-          "text": "Upgrade",
-          "onClick": {
-            "name": "IronGeneratorUpgrade"
-          },
-          "width": 140,
-          "height": 40,
-          "name": "Upgrade",
-          "x": 354,
-          "y": 132
-        }
-      },
-      {
         "type": "inputslot",
         "data": {
           "inputLimit": {
@@ -140,14 +126,28 @@
         }
       },
       {
+        "type": "button",
+        "data": {
+          "text": "Upgrade",
+          "onClick": {
+            "name": "IronGeneratorUpgrade"
+          },
+          "width": 140,
+          "height": 40,
+          "name": "Upgrade",
+          "x": 354,
+          "y": 132
+        }
+      },
+      {
         "type": "label",
         "data": {
-          "text": "Level:1     Required:32",
+          "text": "Level:2     Required:64",
           "color": {
             "value": -10066330,
             "falpha": 0.0
           },
-          "name": "Level:1     Required:32",
+          "name": "Level:2     Required:64",
           "x": 264,
           "y": 86
         }

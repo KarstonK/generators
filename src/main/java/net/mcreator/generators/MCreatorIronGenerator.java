@@ -207,7 +207,7 @@ public class MCreatorIronGenerator extends Elementsgenerators.ModElement {
 
 		@Override
 		public int getInventoryStackLimit() {
-			return 64;
+			return 65;
 		}
 
 		@Override

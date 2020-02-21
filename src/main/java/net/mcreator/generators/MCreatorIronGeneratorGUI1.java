@@ -33,13 +33,13 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 @Elementsgenerators.ModElement.Tag
-public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
+public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 	public static HashMap guiinventory = new HashMap();
 	public static IInventory inherited;
 	private static ContainerType<GuiContainerMod> containerType = null;
 
-	public MCreatorIronGeneratorGUI(Elementsgenerators instance) {
-		super(instance, 3);
+	public MCreatorIronGeneratorGUI1(Elementsgenerators instance) {
+		super(instance, 6);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new, ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
 				GUISlotChangedMessage::handler);
@@ -54,7 +54,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 
 	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("irongeneratorgui"));
+		event.getRegistry().register(containerType.setRegistryName("irongeneratorgui1"));
 	}
 
 	public static class GuiContainerModFactory implements IContainerFactory {
@@ -265,7 +265,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("generators:textures/irongeneratorgui.png");
+		private static final ResourceLocation texture = new ResourceLocation("generators:textures/irongeneratorgui1.png");
 
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
@@ -292,7 +292,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Level:1     Required:32", 7, 6, -10066330);
+			this.font.drawString("Level:2     Required:64", 7, 6, -10066330);
 		}
 
 		@Override
