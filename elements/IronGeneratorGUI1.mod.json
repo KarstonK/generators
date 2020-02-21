@@ -135,19 +135,19 @@
           "width": 140,
           "height": 40,
           "name": "Upgrade",
-          "x": 354,
+          "x": 446,
           "y": 132
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Level:2     Required:64",
+          "text": "Level:1         Required:8",
           "color": {
             "value": -10066330,
             "falpha": 0.0
           },
-          "name": "Level:2     Required:64",
+          "name": "Level:1         Required:8",
           "x": 264,
           "y": 86
         }
@@ -157,8 +157,47 @@
         "data": {
           "image": "ironx2.png",
           "name": "ironx2.png",
-          "x": 498,
+          "x": 528,
           "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spawn rate:5s",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Spawn rate:5s",
+          "x": 264,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spawn amount:1",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Spawn amount:1",
+          "x": 264,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Next:Rate to 4s",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Next:Rate to 4s",
+          "x": 264,
+          "y": 158
         }
       }
     ],

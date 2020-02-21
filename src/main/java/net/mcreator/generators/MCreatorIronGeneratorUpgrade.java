@@ -159,19 +159,8 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 0)) {
-			if (entity instanceof PlayerEntity && !world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("level=0"), (false));
-			}
-			if (((amount) == 32)) {
-				if (entity instanceof PlayerEntity && !world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("amount=32"), (false));
-				}
-				{
-					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 1);
-				}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 1)) {
+			if (((amount) == 8)) {
 				{
 					TileEntity inv = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (inv instanceof LockableLootTileEntity)
@@ -217,24 +206,26 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 					if (inv instanceof LockableLootTileEntity)
 						((LockableLootTileEntity) inv).removeStackFromSlot((int) (8));
 				}
+				{
+					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+					if (tileEntity != null)
+						tileEntity.getTileData().putDouble("level", 2);
+				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("IronGeneratorGUI1");
+							return new StringTextComponent("IronGeneratorGUI2");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new MCreatorIronGeneratorGUI1.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+							return new MCreatorIronGeneratorGUI2.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
 									.writeBlockPos(new BlockPos(x, y, z)));
 						}
 					}, new BlockPos(x, y, z));
-			} else if (((amount) > 32)) {
-				from = (double) 32;
-				if (entity instanceof PlayerEntity && !world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("amount>32"), (false));
-				}
+			} else if (((amount) > 8)) {
+				from = (double) 8;
 				if (((new Object() {
 					public int getAmount(BlockPos pos, int sltid) {
 						TileEntity inv = world.getTileEntity(pos);
@@ -553,25 +544,21 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 				{
 					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (tileEntity != null)
-						tileEntity.getTileData().putDouble("level", 1);
+						tileEntity.getTileData().putDouble("level", 2);
 				}
 				if (entity instanceof ServerPlayerEntity)
 					NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 						@Override
 						public ITextComponent getDisplayName() {
-							return new StringTextComponent("IronGeneratorGUI1");
+							return new StringTextComponent("IronGeneratorGUI2");
 						}
 
 						@Override
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new MCreatorIronGeneratorGUI1.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+							return new MCreatorIronGeneratorGUI2.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
 									.writeBlockPos(new BlockPos(x, y, z)));
 						}
 					}, new BlockPos(x, y, z));
-			} else {
-				if (entity instanceof PlayerEntity && !world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("amount is ") + "" + ((amount)))), (false));
-				}
 			}
 		} else if (((new Object() {
 			public double getValue(BlockPos pos, String tag) {
@@ -580,14 +567,8 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 1)) {
-			if (entity instanceof PlayerEntity && !world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("level=0"), (false));
-			}
-			if (((amount) == 64)) {
-				if (entity instanceof PlayerEntity && !world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("amount=64"), (false));
-				}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 2)) {
+			if (((amount) == 16)) {
 				{
 					TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (tileEntity != null)
@@ -651,11 +632,8 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 									.writeBlockPos(new BlockPos(x, y, z)));
 						}
 					}, new BlockPos(x, y, z));
-			} else if (((amount) > 64)) {
-				from = (double) 64;
-				if (entity instanceof PlayerEntity && !world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("amount>64"), (false));
-				}
+			} else if (((amount) > 16)) {
+				from = (double) 16;
 				if (((new Object() {
 					public int getAmount(BlockPos pos, int sltid) {
 						TileEntity inv = world.getTileEntity(pos);
@@ -989,10 +967,6 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 									.writeBlockPos(new BlockPos(x, y, z)));
 						}
 					}, new BlockPos(x, y, z));
-			} else {
-				if (entity instanceof PlayerEntity && !world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("amount is ") + "" + ((amount)))), (false));
-				}
 			}
 		}
 	}

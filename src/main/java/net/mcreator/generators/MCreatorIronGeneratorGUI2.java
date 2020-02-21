@@ -33,13 +33,13 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 @Elementsgenerators.ModElement.Tag
-public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
+public class MCreatorIronGeneratorGUI2 extends Elementsgenerators.ModElement {
 	public static HashMap guiinventory = new HashMap();
 	public static IInventory inherited;
 	private static ContainerType<GuiContainerMod> containerType = null;
 
-	public MCreatorIronGeneratorGUI(Elementsgenerators instance) {
-		super(instance, 3);
+	public MCreatorIronGeneratorGUI2(Elementsgenerators instance) {
+		super(instance, 7);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new, ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
 				GUISlotChangedMessage::handler);
@@ -54,7 +54,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 
 	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("irongeneratorgui"));
+		event.getRegistry().register(containerType.setRegistryName("irongeneratorgui2"));
 	}
 
 	public static class GuiContainerModFactory implements IContainerFactory {
@@ -265,7 +265,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("generators:textures/irongeneratorgui.png");
+		private static final ResourceLocation texture = new ResourceLocation("generators:textures/irongeneratorgui2.png");
 
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
@@ -282,7 +282,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 			int l = (this.height - this.ySize) / 2;
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("generators:textures/ironx2.png"));
-			this.blit(this.guiLeft + 124, this.guiTop + 4, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 144, this.guiTop + 4, 0, 0, 256, 256);
 		}
 
 		@Override
@@ -292,7 +292,10 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Level:1     Required:32", 7, 6, -10066330);
+			this.font.drawString("Level:2         Required:16", 7, 6, -10066330);
+			this.font.drawString("Spawn rate: 4s", 7, 18, -10066330);
+			this.font.drawString("Spawn amount:1", 7, 29, -10066330);
+			this.font.drawString("Next:Rate to 3s", 7, 41, -10066330);
 		}
 
 		@Override
@@ -305,7 +308,7 @@ public class MCreatorIronGeneratorGUI extends Elementsgenerators.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 52, this.guiTop + 29, 70, 20, "Upgrade", e -> {
+			this.addButton(new Button(this.guiLeft + 98, this.guiTop + 29, 70, 20, "Upgrade", e -> {
 				generators.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));

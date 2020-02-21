@@ -9,20 +9,6 @@
     "containerBlock": "IronGenerator",
     "components": [
       {
-        "type": "button",
-        "data": {
-          "text": "Upgrade",
-          "onClick": {
-            "name": "IronGeneratorUpgrade"
-          },
-          "width": 140,
-          "height": 40,
-          "name": "Upgrade",
-          "x": 354,
-          "y": 132
-        }
-      },
-      {
         "type": "inputslot",
         "data": {
           "inputLimit": {
@@ -140,14 +126,28 @@
         }
       },
       {
+        "type": "button",
+        "data": {
+          "text": "Upgrade",
+          "onClick": {
+            "name": "IronGeneratorUpgrade"
+          },
+          "width": 140,
+          "height": 40,
+          "name": "Upgrade",
+          "x": 446,
+          "y": 132
+        }
+      },
+      {
         "type": "label",
         "data": {
-          "text": "Level:1     Required:32",
+          "text": "Level:2         Required:16",
           "color": {
             "value": -10066330,
             "falpha": 0.0
           },
-          "name": "Level:1     Required:32",
+          "name": "Level:2         Required:16",
           "x": 264,
           "y": 86
         }
@@ -157,8 +157,47 @@
         "data": {
           "image": "ironx2.png",
           "name": "ironx2.png",
-          "x": 498,
+          "x": 538,
           "y": 82
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spawn rate: 4s",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Spawn rate: 4s",
+          "x": 264,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spawn amount:1",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Spawn amount:1",
+          "x": 264,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Next:Rate to 3s",
+          "color": {
+            "value": -10066330,
+            "falpha": 0.0
+          },
+          "name": "Next:Rate to 3s",
+          "x": 264,
+          "y": 156
         }
       }
     ],

@@ -56,28 +56,6 @@ public class MCreatorIronGeneratorProcedure extends Elementsgenerators.ModElemen
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 0)) {
-			if (entity instanceof ServerPlayerEntity)
-				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
-					@Override
-					public ITextComponent getDisplayName() {
-						return new StringTextComponent("IronGeneratorGUI");
-					}
-
-					@Override
-					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new MCreatorIronGeneratorGUI.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
-								.writeBlockPos(new BlockPos(x, y, z)));
-					}
-				}, new BlockPos(x, y, z));
-		}
-		if (((new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null)
-					return tileEntity.getTileData().getDouble(tag);
-				return -1;
-			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 1)) {
 			if (entity instanceof ServerPlayerEntity)
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
@@ -89,6 +67,27 @@ public class MCreatorIronGeneratorProcedure extends Elementsgenerators.ModElemen
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
 						return new MCreatorIronGeneratorGUI1.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
+								.writeBlockPos(new BlockPos(x, y, z)));
+					}
+				}, new BlockPos(x, y, z));
+		} else if (((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "level")) == 2)) {
+			if (entity instanceof ServerPlayerEntity)
+				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+					@Override
+					public ITextComponent getDisplayName() {
+						return new StringTextComponent("IronGeneratorGUI2");
+					}
+
+					@Override
+					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+						return new MCreatorIronGeneratorGUI2.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer())
 								.writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));

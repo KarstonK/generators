@@ -282,7 +282,7 @@ public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 			int l = (this.height - this.ySize) / 2;
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("generators:textures/ironx2.png"));
-			this.blit(this.guiLeft + 124, this.guiTop + 4, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 139, this.guiTop + 4, 0, 0, 256, 256);
 		}
 
 		@Override
@@ -292,7 +292,10 @@ public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Level:2     Required:64", 7, 6, -10066330);
+			this.font.drawString("Level:1         Required:8", 7, 6, -10066330);
+			this.font.drawString("Spawn rate:5s", 7, 18, -10066330);
+			this.font.drawString("Spawn amount:1", 7, 30, -10066330);
+			this.font.drawString("Next:Rate to 4s", 7, 42, -10066330);
 		}
 
 		@Override
@@ -305,7 +308,7 @@ public class MCreatorIronGeneratorGUI1 extends Elementsgenerators.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 52, this.guiTop + 29, 70, 20, "Upgrade", e -> {
+			this.addButton(new Button(this.guiLeft + 98, this.guiTop + 29, 70, 20, "Upgrade", e -> {
 				generators.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));

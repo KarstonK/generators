@@ -42,14 +42,6 @@
       }
     },
     {
-      "name": "IronGeneratorGUI",
-      "type": "gui",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
       "name": "IronGeneratorUpgrade",
       "type": "procedure",
       "sortid": 4,
@@ -113,6 +105,14 @@
       "name": "IronGeneratorGUI1",
       "type": "gui",
       "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "IronGeneratorGUI2",
+      "type": "gui",
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "ids": {}
