@@ -251,6 +251,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (0), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -285,6 +286,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (1), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -319,6 +321,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (2), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -353,6 +356,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (3), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -387,6 +391,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (4), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -421,6 +426,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (5), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -455,6 +461,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (6), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -489,6 +496,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (7), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -523,6 +531,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (8), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -663,6 +672,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (0), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -697,6 +707,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (1), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -731,6 +742,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (2), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -765,6 +777,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (3), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -799,6 +812,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (4), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -833,6 +847,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (5), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -867,6 +882,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (6), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -901,6 +917,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (7), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
@@ -935,6 +952,7 @@ public class MCreatorIronGeneratorUpgrade extends Elementsgenerators.ModElement 
 						if (inv instanceof LockableLootTileEntity)
 							((LockableLootTileEntity) inv).decrStackSize((int) (8), (int) ((from)));
 					}
+					from = (double) 0;
 				} else {
 					from = (double) ((from) - (new Object() {
 						public int getAmount(BlockPos pos, int sltid) {
